@@ -1,0 +1,1 @@
+console.log('Storage module loaded');
