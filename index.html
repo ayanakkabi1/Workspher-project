@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorkSphere - Virtual Workspace</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <div class="headercontent"> 
+        <div class="headercontent">
             <h1>WorkSphere</h1>
-            <button class="burger" id="burgerBtn">
-  <span></span>
-</button>
+            <button class="burger" id="burgerBtn"></button>
+        </div>
 
-        </div>
-        
     </header>
-    <nav class="mainnav">
-        <div class="unsignedstaf">
-        <p>Unassigned Staff</p>
-        </div>
+    <aside class="mainnav">
         <button>Add New Worker</button>
-    </nav>
+        <div class="unsignedstaf">
+            <p>Unassigned Staff</p>
+        </div>
+    </aside>
     <main>
         <div class="zones">
-            <div class="Salle-de-conférence"></div>
-            <div class="Réception"></div>
+            <div class="Salle-de-conference"></div>
+            <div class="reception"></div>
+            <div class="couloir-verticale"></div>
             <div class="Salle-des-serveurs"></div>
-            <div class="Salle-de-sécurité"></div>
+            <div class="Salle-de-securite"></div>
+            <div class="couloir-horizontale"></div>
             <div class="Salle-du-personnel"></div>
             <div class="Salle-archives"></div>
         </div>
     </main>
     <script src="js/app.js"></script>
+    <form id="Add">
+        <div class="nom">
+            <label for="name">Full name</label>
+            <input type="text">
+        </div>
+        <div class="role">
+            <label for="name">Role</label>
+            <select></select>
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <input type="text">
+        </div>
+        <div class="telephone">
+            <label for="name">Telephone</label>
+            <input type="text">
+        </div>
+        <div class="experience">
+            <form class="experience">
+                <div class="societenom">
+                    <label for="name">Full name</label>
+                    <input type="text">
+                </div>
+        </div>
+        <div class="datedepart">
+            <label for="name"></label>
+            <input type="date">
+        </div>
+        </div>
+        <div class="datefin">
+            <label for="name"></label>
+            <input type="date">
+        </div>
+        </div>
+        <div class="societenom">
+            <label for="name">Description</label>
+            <input type="text-area">
+        </div>
+        </div>
+        <button class="addexp">Add experience</button>
+    </form>
+    </div>
+    </form>
 </body>
+
 </html>

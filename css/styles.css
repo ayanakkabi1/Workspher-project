@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -33,15 +32,13 @@
 .burger span::before {
   top: -8px;
 }
-
-
 .burger span::after {
   top: 8px;
 }
 
 
 .burger.active span {
-  background: transparent; /* hides middle line */
+  background: transparent; 
 }
 
 .burger.active span::before {
@@ -71,33 +68,50 @@ body{
 
 .zones{
   display:grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-template-rows :repeat(2 , 1fr);
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows :repeat(3 , 1fr);
   grid-auto-rows: 100px;        
   gap: 20px;
+  height: 70vh;
+  width: 100%;
 }
 
-.Salle-de-conférence{
-  grid-column: span 2;
-  grid-row: span 2;
+.Salle-de-conference{
+ grid-column: 1 / 2;
+  grid-row: 1 / 2;
   background-color: #b04b4b;
 }
 
-.Réception{
-    grid-column: span 2;
-    grid-row: span 2;
+.reception{
+     grid-column: 1;
+     grid-row: 2/4;
     background-color: #b04b4b;
 }
-
-.Salle-de-serveurs{ 
+.couloir-verticale{
+    grid-column: 2;
+    grid-row: 1/4;
+}
+.couloir-horizontale{
+    grid-column: 3/5;
+    grid-row: 2;
+}
+.Salle-des-serveurs{ 
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #551919;
+}
+.Salle-de-securite{
+    grid-column: 4;
+    grid-row: 1;
+    background-color: #5c1b1b;
+}
+.Salle-du-personnel{
+    grid-column: 3;
+    grid-row: 3;
     background-color: #b04b4b;
 }
-.Salle-de-sécurité{
-    background-color: #b04b4b;
-}
-.Salle-de-personnel{
-  background-color: #b04b4b;
-}
-.Salle-archive{
+.Salle-archives{
+   grid-column:4;
+   grid-row:3;             
   background-color: #b04b4b;
 }
