@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorkSphere - Virtual Workspace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <header>
+        <div class="headercontent"> 
+            <h1>WorkSphere</h1>
+            <button class="burger" id="burgerBtn">
+  <span></span>
+</button>
+
+        </div>
         
+    </header>
+    <nav class="mainnav">
+        <div class="unsignedstaf">
+        <p>Unassigned Staff</p>
+        </div>
+        <button>Add New Worker</button>
     </nav>
+    <main>
+        <div class="zones">
+            <div class="Salle-de-conférence"></div>
+            <div class="Réception"></div>
+            <div class="Salle-des-serveurs"></div>
+            <div class="Salle-de-sécurité"></div>
+            <div class="Salle-du-personnel"></div>
+            <div class="Salle-archives"></div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
