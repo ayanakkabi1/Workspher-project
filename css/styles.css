@@ -1,8 +1,103 @@
 
-/*  RESET CSS */
-/* ============ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.burger {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.burger span::before {
+  top: -8px;
+}
+
+
+.burger span::after {
+  top: 8px;
+}
+
+
+.burger.active span {
+  background: transparent; /* hides middle line */
+}
+
+.burger.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burger.active span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+body{
+  font-family: 'Inter',sans-serif;
+  background: #fffefe;
+  margin: 15px;
+}
+.headercontent{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+}
+.mainnav{
+   display: none;
+} 
+
+.zones{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows :repeat(2 , 1fr);
+  grid-auto-rows: 100px;        
+  gap: 20px;
+}
+
+.Salle-de-conférence{
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #b04b4b;
+}
+
+.Réception{
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #b04b4b;
+}
+
+.Salle-de-serveurs{ 
+    background-color: #b04b4b;
+}
+.Salle-de-sécurité{
+    background-color: #b04b4b;
+}
+.Salle-de-personnel{
+  background-color: #b04b4b;
+}
+.Salle-archive{
+  background-color: #b04b4b;
 }
