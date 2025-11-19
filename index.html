@@ -40,40 +40,48 @@
     <form id="Add">
         <div class="nom">
             <label for="name">Full name</label>
-            <input type="text">
+            <input type="text" placeholder="Aya Nakkabi">
         </div>
         <div class="role">
-            <label for="name">Role</label>
-            <select></select>
+            <label for="name">Choose a role</label>
+<select id="country" name="country">
+  <option value="">-- Select --</option>
+  <option value="Manager">Manager</option>
+  <option value="It">IT Technicians</option>
+  <option value="Receptionists">Receptionists</option>
+  <option value="SecurityAgents">Security Agents</option>
+  <option value="SecurityAgents">Cleaning Staff</option>
+</select>
+
         </div>
         <div class="email">
             <label for="email">Email</label>
-            <input type="text">
+            <input type="text" placeholder="ayanakkabi01@gmail.com">
         </div>
         <div class="telephone">
-            <label for="name">Telephone</label>
-            <input type="text">
+            <label for="number" placeholder="0607051609">Phone</label>
+            <input type="number" id="number" name="number" placeholder="Enter a number">
         </div>
         <div class="experience">
             <form class="experience">
                 <div class="societenom">
-                    <label for="name">Full name</label>
-                    <input type="text">
+                    <label for="socname">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Enter company name" >
                 </div>
         </div>
         <div class="datedepart">
-            <label for="name"></label>
-            <input type="date">
+            <label for="datedepart">Departure Date:</label>
+            <input type="date" id="datedepart" name="datedepart">
         </div>
         </div>
         <div class="datefin">
-            <label for="name"></label>
-            <input type="date">
+            <label for="datefin">End Date:</label>
+            <input type="date" id="findate" name="findate">
         </div>
         </div>
         <div class="societenom">
             <label for="name">Description</label>
-            <input type="text-area">
+            <textarea id="description" name="description" placeholder="Enter description"></textarea>
         </div>
         </div>
         <button class="addexp">Add experience</button>
