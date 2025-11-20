@@ -115,3 +115,92 @@ body{
    grid-row:3;             
   background-color: #b04b4b;
 }
+
+#Add {
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: "Inter", sans-serif;
+}
+
+#Add h3 {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #6a5acd;
+}
+
+
+.field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+
+.addexp {
+  width: 100%;
+  padding: 12px;
+  background: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.addexp:hover {
+  background: #5847c0;
+}
+.buttexp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.experiencebutt{
+ width: 50%;
+  padding: 12px;
+  background: #05b73a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
