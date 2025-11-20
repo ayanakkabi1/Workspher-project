@@ -134,8 +134,17 @@ body{
   font-weight: 600;
   color: #444;
 }
-
-
+#img{
+  width:35px;
+}
+.pic{
+  display:flex;
+  flex-direction: row;
+  gap:10px;
+}
+#photo{
+  width:100%
+}
 .field {
   display: flex;
   flex-direction: column;
