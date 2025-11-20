@@ -20,7 +20,8 @@ formAdd.addEventListener("submit", function(e){
         email: inputEmail.value,
         phone: inputPhone.value,
         datedepart: inputDateDepart.value,
-        findate: inputDateFin.value
+        findate: inputDateFin.value,
+        photoValue: inputphoto.value
     };
 
     employees.push(employee);
