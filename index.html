@@ -18,92 +18,154 @@
         </div>
 
     </header>
-    <aside class="mainnav">
-        <button ID+>Add New Worker</button>
-        <div class="unsignedstaf">
-            <p>Unassigned Staff</p>
-        </div>
-    </aside>
-    <main>
+    <div class="homedisplay">
+        <aside class="mainnav" id="mainNav">
+            <button id="addWorkerBtn">Add New Worker</button>
+            <div class="unsignedstaff">
+                <p>Unassigned Staff</p>
+                <div class="staff-list" id="unassignedStaff">
+                </div>
+            </div>
+        </aside>
         <div class="zones">
-            <div class="Salle-de-conference"></div>
-            <div class="reception"></div>
-            <div class="couloir-verticale"></div>
-            <div class="Salle-des-serveurs"></div>
-            <div class="Salle-de-securite"></div>
-            <div class="couloir-horizontale"></div>
-            <div class="Salle-du-personnel"></div>
-            <div class="Salle-archives"></div>
+            <div class="zone Salle-de-conference" id="conference">
+                <div class="zone-title">Conference Room</div>
+                <div class="zone-staff" id="conference-staff"></div>
+                <button class="add-staff-btn" id="conferenceadd">+</button>
+            </div>
+            <div class="zone reception" id="reception">
+                <div class="zone-title">Reception</div>
+                <div class="zone-staff" id="reception-staff"></div>
+                <button class="add-staff-btn" id="receptionadd">+</button>
+            </div>
+            <div class="couloir-verticale">
+                <div class="zone-title"></div>
+            </div>
+            <div class="zone Salle-des-serveurs" id="server">
+                <div class="zone-title">Server Room</div>
+                <div class="zone-staff" id="server-staff"></div>
+                <button class="add-staff-btn" id="serveradd">+</button>
+            </div>
+            <div class="zone Salle-de-securite" id="security">
+                <div class="zone-title">Security Room</div>
+                <div class="zone-staff" id="security-staff"></div>
+                <button class="add-staff-btn" id="securityadd">+</button>
+            </div>
+            <div class="couloir-horizontale">
+                <div class="zone-title"></div>
+            </div>
+            <div class="zone Salle-du-personnel" id="staff">
+                <div class="zone-title">Staff Room</div>
+                <div class="zone-staff" id="staff-staff"></div>
+                <button class="add-staff-btn" id="staffadd">+</button>
+            </div>
+            <div class="zone Salle-archives" id="archive">
+                <div class="zone-title">Archive Room</div>
+                <div class="zone-staff" id="archive-staff"></div>
+                <button class="add-staff-btn" id="archiveadd">+</button>
+            </div>
         </div>
-    </main>
-<form id="Add">
-
-    <div class="field">
-        <label for="fullname">Full name</label>
-        <input type="text" id="fullname" placeholder="Aya Nakkabi">
+        </main>
     </div>
+    <form id="Add">
+        <div class="modal-content">
+            <div class="scrollable-form-body">
+                <div class="field">
+                    <label for="fullname">Full name</label>
+                    <input type="text" id="fullname" placeholder="Aya Nakkabi">
+                </div>
 
-    <div class="field">
-        <label for="role">Choose a role</label>
-        <select id="role" name="role">
-            <option value="">-- Select --</option>
-            <option value="Manager">Manager</option>
-            <option value="IT">IT Technicians</option>
-            <option value="Receptionists">Receptionists</option>
-            <option value="SecurityAgents">Security Agents</option>
-            <option value="CleaningStaff">Cleaning Staff</option>
-        </select>
-    </div>
 
-    <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="ayanakkabi01@gmail.com">
-    </div>
 
-    <div class="field">
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" placeholder="0607051609">
-    </div>
+                <div class="field">
+                    <label for="role">Choose a role</label>
+                    <select id="role" name="role">
+                        <option value="">-- Select --</option>
+                        <option value="Manager">Manager</option>
+                        <option value="IT">IT Technicians</option>
+                        <option value="Receptionists">Receptionists</option>
+                        <option value="SecurityAgents">Security Agents</option>
+                        <option value="CleaningStaff">Cleaning Staff</option>
+                    </select>
+                </div>
 
-    <div class="field">
-        <label for="photo">Picture link</label>
-        <div class="pic">
-        <img src="https://www.svgrepo.com/show/421853/account-avatar-man.svg" alt="Worker Avatar" class="worker-avatar" id="img">
-        <input type="text" id="photo" placeholder="Enter the URL">
+
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="ayanakkabi01@gmail.com">
+                </div>
+
+
+
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="0607051609">
+                </div>
+
+
+
+                <div class="field">
+                    <label for="photo">Picture link</label>
+                    <div class="pic">
+                        <img src="https://www.svgrepo.com/show/421853/account-avatar-man.svg" alt="Worker Avatar"
+                            class="worker-avatar" id="img">
+                        <input type="text" id="photo" placeholder="Enter the URL">
+                    </div>
+                </div>
+
+                <div class="experience">
+                    <h3>Experience</h3>
+                    <div class="field">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" placeholder="Enter company name">
+                    </div>
+
+                    <div class="field">
+                        <label for="datedepart">Start Date:</label>
+                        <input type="date" id="datedepart">
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label for="findate">End Date:</label>
+
+                        <input type="date" id="findate">
+
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label for="description">Description</label>
+
+                        <textarea id="description" placeholder="Enter description"></textarea>
+
+                    </div>
+
+                    <div class="buttexp">
+
+                        <button class="experiencebutt">Add a experience</button>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <button class="addexp">Add</button>
         </div>
-    </div>
-<div class="experience">
-    <h3>Experience</h3>
-    <div class="field">
-        <label for="company">Company Name</label>
-        <input type="text" id="company" placeholder="Enter company name">
-    </div>
-
-    <div class="field">
-        <label for="datedepart">Start Date:</label>
-        <input type="date" id="datedepart">
-    </div>
-
-    <div class="field">
-        <label for="findate">End Date:</label>
-        <input type="date" id="findate">
-    </div>
-
-    <div class="field">
-        <label for="description">Description</label>
-        <textarea id="description" placeholder="Enter description"></textarea>
-    </div>
-    <div class="buttexp">
-    <button class="experiencebutt">Add a experience</button>
-    </div>
-</div>
-    <button class="addexp">Add</button>
-</form>
+    </form>
 
     <script src="js/app.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/storage.js"></script>
-    
+
 </body>
 
 </html>
