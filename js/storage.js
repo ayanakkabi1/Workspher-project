@@ -21,7 +21,7 @@ formAdd.addEventListener("submit", function(e){
         phone: inputPhone.value,
         datedepart: inputDateDepart.value,
         findate: inputDateFin.value
-    };
+    };""
 
     employees.push(employee);
     save(employees);
