@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     </header>
     <div class="homedisplay">
         <aside class="mainnav" id="mainNav">
-            <button id="addWorkerBtn">Add New Worker</button>
+            <button id="addnewWorkerBtn">Add New Worker</button>
             <div class="unsignedstaff">
                 <p>Unassigned Staff</p>
                 <div class="staff-list" id="unassignedStaff">
@@ -161,7 +162,7 @@
 
                     <div class="buttexp">
 
-                        <button class="experiencebutt">Add a experience</button>
+                        <button class="experiencebutt" id="experiencebutt">Add a experience</button>
 
                     </div>
 
@@ -171,10 +172,10 @@
 
 
             </div>
-            <button class="addexp">Add</button>
+            <button id="submitform" class="addworker">Add</button>
         </div>
     </form>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/app.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/storage.js"></script>
