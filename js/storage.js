@@ -20,9 +20,8 @@ formAdd.addEventListener("submit", function(e){
         email: inputEmail.value,
         phone: inputPhone.value,
         datedepart: inputDateDepart.value,
-        findate: inputDateFin.value,
-        photoValue: inputphoto.value
-    };
+        findate: inputDateFin.value
+    };""
 
     employees.push(employee);
     save(employees);
