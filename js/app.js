@@ -13,13 +13,12 @@ const roleSelect = document.getElementById("role");
 btn.addEventListener("click", () => {
     btn.classList.toggle("active");
 });
-
-// Show form when clicking add worker
-buttaddworker.addEventListener("click", () => {
-    addform.style.display = "block";
-});
-
-// Photo preview
+function createemploye(employee){
+   const div= document.createElement("div");
+   div.classList.add("employee");
+   div.id="emp"
+    
+}
 photoinput.addEventListener("input", () => {
     if (photoinput.value === "") {
         image.src = "https://www.svgrepo.com/show/421853/account-avatar-man.svg";
@@ -62,4 +61,7 @@ SUBMITBUTT.addEventListener("click", (e) => {
     addform.reset();
       addform.style.display = "none"; 
 
+});
+buttaddworker.addEventListener('click', function() {
+  addform.style.display = 'block';
 });

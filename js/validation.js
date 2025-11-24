@@ -1,4 +1,12 @@
-
+const formAdd = document.getElementById("Add");
+const inputNom = document.getElementById("fullname");
+const inputEmail = document.getElementById("email");
+const inputPhone = document.getElementById("phone");
+const inputDateDepart = document.getElementById("datedepart");
+const inputDateFin = document.getElementById("findate");
+const buttexp = document.querySelector(".experiencebutt");
+const photoValue = document.getElementById("photo").value;
+// Validation du nom
 function valideNom(nom) {
     const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;
     return nom.trim() !== "" && regex.test(nom.trim());
