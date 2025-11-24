@@ -5,7 +5,7 @@ const inputPhone = document.getElementById("phone");
 const inputDateDepart = document.getElementById("datedepart");
 const inputDateFin = document.getElementById("findate");
 const buttexp = document.querySelector(".experiencebutt");
-
+const photoValue = document.getElementById("photo").value;
 // Validation du nom
 function valideNom(nom) {
     const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;

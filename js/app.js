@@ -9,6 +9,12 @@ btn.addEventListener("click", () => {
   btn.classList.toggle("active");
   console.log('test');
 });
+function createemploye(employee){
+   const div= document.createElement("div");
+   div.classList.add("employee");
+   div.id="emp"
+    
+}
 photoinput.addEventListener("input", () => {
         if (photoinput.value === "") {
             image.src = "https://www.svgrepo.com/show/421853/account-avatar-man.svg";
