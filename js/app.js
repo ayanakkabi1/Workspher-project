@@ -1,67 +1,65 @@
-const pic=document.getElementById("pic");
 const btn = document.getElementById("burgerBtn");
-const photoinput=document.getElementById("photo");
-const image=document.getElementById("img");
-const buttaddworker=document.getElementById("addWorkerBtn");
-const addform=document.getElementById("Add");
-const liststaff=document.getElementById("unassignedStaff");
+const photoinput = document.getElementById("photo");
+const image = document.getElementById("img");
+const buttaddworker = document.getElementById("addnewWorkerBtn");
+const addform = document.getElementById("Add");
+const employeelist = document.getElementById("unassignedStaff");
+const SUBMITBUTT=document.getElementById("submitform")
+// Form inputs
+const inputNom = document.getElementById("fullname");
+const roleSelect = document.getElementById("role");
 
+// Toggle burger menu
 btn.addEventListener("click", () => {
-  btn.classList.toggle("active");
-  console.log('test');
+    btn.classList.toggle("active");
 });
+
+// Show form when clicking add worker
+buttaddworker.addEventListener("click", () => {
+    addform.style.display = "block";
+});
+
+// Photo preview
 photoinput.addEventListener("input", () => {
-        if (photoinput.value === "") {
-            image.src = "https://www.svgrepo.com/show/421853/account-avatar-man.svg";
-        } else {
-            image.src = photoinput.value;
-        }
-    }); 
-
-
-buttaddworker.addEventListener('click', function() {
-  addform.style.display = 'block';
-});
-// app.js
-const KEY = "worksphere";
-
-function load() {
-    return JSON.parse(localStorage.getItem(KEY)) || [];
-}
-
-function save(employees) {
-    localStorage.setItem(KEY, JSON.stringify(employees));
-}
-
-// AFFICHER LES EMPLOYÉS
-function displayEmployees() {
-    const employeesList = document.getElementById('employeesList');
-    const employees = load();
-
-    console.log('Employés à afficher:', employees);
-
-    // Vider le conteneur
-    employeesList.innerHTML = '';
-
-    if (employees.length === 0) {
-        employeesList.innerHTML = `
-            <div class="empty-message">
-                <p>📝 Aucun employé trouvé</p>
-                <p>Ajoutez votre premier employé pour commencer</p>
-            </div>
-        `;
-        return;
+    if (photoinput.value === "") {
+        image.src = "https://www.svgrepo.com/show/421853/account-avatar-man.svg";
+    } else {
+        image.src = photoinput.value;
     }
+});
 
-    // Créer un conteneur grid
-    const gridContainer = document.createElement('div');
-    gridContainer.className = 'employees-grid';
+// Handle form submission
+SUBMITBUTT.addEventListener("click", (e) => {
+    e.preventDefault();
 
-    // Ajouter chaque employé
-    employees.forEach(employee => {
-        const employeeCard = createEmployeeCard(employee);
-        gridContainer.appendChild(employeeCard);
-    });
+    const name = inputNom.value.trim();
+    const role = roleSelect.value;
+    const photo = photoinput.value.trim() || "https://www.svgrepo.com/show/421853/account-avatar-man.svg";
 
-    employeesList.appendChild(gridContainer);
-}
+
+    // Create employee card
+    const div = document.createElement("div");
+    div.classList.add("employee");
+    div.style.border="2px solid #ccc";
+    div.style.width="100%"
+    div.style.display="flex"
+    div.style.flexDirection="row"
+    div.style.gap="2%"
+    div.style.alignItems="center"
+    div.style.boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)"
+    div.style.borderRadius="8px"
+    div.innerHTML = `
+        <img src="${photo}" alt="Photo" width="50" height="50" style="border-radius:50%;">
+        <div>
+            <b>${name}</b><br>
+            ${role}
+        </div>
+    `;
+
+    employeelist.appendChild(div);
+
+    // Reset form
+    addform.reset();
+      addform.style.display = "none"; 
+
+});
