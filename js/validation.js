@@ -1,9 +1,25 @@
+<<<<<<< HEAD
 // const formAdd = document.getElementById("Add");
 
 // function valideNom(nom) {
 //     const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;
 //     return nom.trim() !== "" && regex.test(nom.trim());
 // }
+=======
+const formAdd = document.getElementById("Add");
+const inputNom = document.getElementById("fullname");
+const inputEmail = document.getElementById("email");
+const inputPhone = document.getElementById("phone");
+const inputDateDepart = document.getElementById("datedepart");
+const inputDateFin = document.getElementById("findate");
+const buttexp = document.querySelector(".experiencebutt");
+const photoValue = document.getElementById("photo").value;
+// Validation du nom
+function valideNom(nom) {
+    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;
+    return nom.trim() !== "" && regex.test(nom.trim());
+}
+>>>>>>> acf390f2a575e39c0f331517f5d513f26b4c046f
 
 // function valideEmail(email) {
 //     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
