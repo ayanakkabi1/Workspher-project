@@ -357,6 +357,11 @@ body{
   min-height: 90px;
   resize: vertical;
 }
+<<<<<<< HEAD
+
+
+.addworker {
+=======
 #pic{
   width: 35px;
 }
@@ -370,6 +375,7 @@ body{
   width: 100%;
 }
 .addexp {
+>>>>>>> acf390f2a575e39c0f331517f5d513f26b4c046f
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
