@@ -31,7 +31,7 @@
         <div class="zones">
             <div class="zone Salle-de-conference" id="conference">
                 <div class="zone-title">Conference Room</div>
-                <div class="zone-staff" id="conference-staff"></div>
+                <div class="zone-staff" id="conferencestaff"></div>
                 <button class="add-staff-btn" id="conferenceadd">+</button>
             </div>
             <div class="zone reception" id="reception">
@@ -114,8 +114,8 @@
                         <input type="text" id="photo" placeholder="Enter the URL">
                     </div>
                 </div>
-
-                <div class="experience">
+                <div id="experiencedivContainer">
+                <div class="experience" id="experience">
                     <h3>Experience</h3>
                     <div class="field">
                         <label for="company">Company Name</label>
@@ -146,15 +146,12 @@
                         <textarea id="description" placeholder="Enter description"></textarea>
 
                     </div>
-
-                    <div class="buttexp">
-
-                        <button class="experiencebutt" id="experiencebutt">Add a experience</button>
-
-                    </div>
-
+                      </div>
                 </div>
+               <div class="buttexp">
 
+                       <button type="button" class="experiencebutt" id="experiencebutt">Add a experience</button>
+                    </div>
 
 
 
