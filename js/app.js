@@ -36,7 +36,7 @@ function load() {
 }
 
 let employees = load();
-
+sidebar_load();
 
 // ==========================
 // SIDEBAR – LISTE DES EMPLOYÉS
@@ -442,30 +442,4 @@ document.getElementById("securityadd").addEventListener("click", () => openWorke
 document.getElementById("staffadd").addEventListener("click", () => openWorkerSelector("staff-staff", 10));
 document.getElementById("archiveadd").addEventListener("click", () => openWorkerSelector("archive-staff", 1));
 
-// ==========================
-// DRAG & DROP DES SALLES
-// ==========================
-const zones = document.querySelectorAll(".zone-staff");
-zones.forEach(zone => {
-    zone.addEventListener("dragover", ev => ev.preventDefault());
-    zone.addEventListener("drop", ev => {
-        ev.preventDefault();
-        const workerId = ev.dataTransfer.getData("workerId");
-        const worker = employees.find(w => w.id == workerId);
-
-        // Vérifier la limite
-        const limitMap = {
-            "conferencestaff": 10,
-            "reception-staff": 3,
-            "server-staff": 4,
-            "security-staff": 4,
-            "staff-staff": 10,
-            "archive-staff": 1
-        };
-        const limit = limitMap[zone.id];
-        if (!worker) return;
-
-        addToRoom(worker, zone.id, limit);
-    });
-});
 sidebar_load() ;

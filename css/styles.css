@@ -372,8 +372,13 @@ body{
 #photo{
   width: 100%;
 }
-.addworker{
-  width: 100%;
+.butts {
+  display: flex;
+  gap: 4px;
+}
+
+.closeAddForm {
+  width: 48%;
   padding: 10px;
   box-sizing: border-box;
   background: #6a5acd;
@@ -382,11 +387,26 @@ body{
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: 0.2s ease;
   border-top: 1px solid #ddd;
-  margin-top: 5px;
 }
+
+.addworker {
+  width: 48%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.2s ease;
+  border-top: 1px solid #ddd;
+}
+
 
 .addexp:hover {
   background: #5847c0;
@@ -472,10 +492,6 @@ body{
     gap: 10px;
     height: 80vh;
     overflow-y: auto; 
-
-  .zone {
-    padding: 8px;
-  }
 
 }
 
