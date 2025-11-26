@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body>
@@ -72,17 +73,15 @@
                 <button class="add-staff-btn" id="archiveadd">+</button>
             </div>
         </div>
-        </main>
     </div>
     <form id="Add">
         <div class="modal-content">
             <div class="scrollable-form-body">
+                
                 <div class="field">
                     <label for="fullname">Full name</label>
                     <input type="text" id="fullname" placeholder="Aya Nakkabi">
                 </div>
-
-
 
                 <div class="field">
                     <label for="role">Choose a role</label>
@@ -96,27 +95,26 @@
                     </select>
                 </div>
 
-    <div class="field">
-        <label for="photo">Picture</label>
-        <div id="imginput">
-        <img src="assets/images/avatar.spng.png" id="pic">
-        <input type="text" id="photo" placeholder="Enter the URL">
-        </div>
-    </div>
-            <div class="field">
+                <div class="field">
+                 <label for="photo">Picture</label>
+                  <div id="imginput">
+                  <img src="assets/images/avatar.spng.png" id="pic" alt="avatar">
+                  <input type="text" id="photo" placeholder="Enter the URL">
+                  </div>
+                </div>
+                <div class="field">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="ayanakkabi01@gmail.com">
                 </div>
-
-
 
                 <div class="field">
                     <label for="phone">Phone</label>
                     <input type="text" id="phone" placeholder="0607051609">
                 </div>
-<div class="experience">
+
+                    <div class="experience">
     <h3>Experience</h3>
-                <div id="experiencedivContainer">
+            <div id="experiencedivContainer">
                 <div class="experience" id="experience">
                     <h3>Experience</h3>
                     <div class="field">
@@ -129,8 +127,6 @@
                         <input type="date" id="datedepart">
                     </div>
 
-
-
                     <div class="field">
 
                         <label for="findate">End Date:</label>
@@ -139,8 +135,6 @@
 
                     </div>
 
-
-
                     <div class="field">
 
                         <label for="description">Description</label>
@@ -148,8 +142,8 @@
                         <textarea id="description" placeholder="Enter description"></textarea>
 
                     </div>
-                      </div>
                 </div>
+            </div>
                <div class="buttexp">
 
                        <button type="button" class="experiencebutt" id="experiencebutt">Add a experience</button>
@@ -157,13 +151,15 @@
 
 
 
-            </div>
+                    </div>
+                    <div class="butts">
             <button id="submitform" class="addworker">Add</button>
+            <button id="Close" class="closeAddForm">Fermer</button>
+                    </div>
+            </div>
         </div>
     </form>
     
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-
     <script src="js/app.js"></script>
 </body>
 
