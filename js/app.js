@@ -105,71 +105,6 @@ photoinput.addEventListener("input", () => {
 });
 
 // ==========================
-// VALIDATIONS
-// ==========================
-function valideNom(nom) {
-    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;
-    return nom.trim() !== "" && regex.test(nom.trim());
-}
-
-function valideEmail(email) {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return email.trim() !== "" && regex.test(email.trim());
-}
-
-function validePhone(phone) {
-    const regex = /^0[5-7][0-9]{8}$/;
-    return phone.trim() !== "" && regex.test(phone.trim());
-}
-
-function validePic(picture) {
-    const regex = /^https?:\/\/[^\s/$.?#].[^\s]*$/i;
-    return picture.trim() !== "" && regex.test(picture.trim());
-}
-
-// ==========================
-// AJOUT D’UN BLOC D’EXPÉRIENCE
-// ==========================
-buttexp.addEventListener("click", function(e) {
-    e.preventDefault();
-
-    const newExp = document.createElement("div");
-    newExp.classList.add("experience-block");
-    newExp.style.cssText = `
-        border:1px solid #ccc;
-        padding:10px;
-        margin-bottom:10px;
-        border-radius:6px;
-    `;
-
-    newExp.innerHTML = `
-        <div class="field">
-            <label>Nom de l'entreprise</label>
-            <input type="text" placeholder="Entreprise">
-        </div>
-        <div class="field">
-            <label>Date début</label>
-            <input type="date">
-        </div>
-        <div class="field">
-            <label>Date fin</label>
-            <input type="date">
-        </div>
-        <div class="field">
-            <label>Description</label>
-            <textarea placeholder="Description"></textarea>
-        </div>
-        <button type="button" class="removeExpBtn">Supprimer</button>
-    `;
-
-    experiencedivContainer.appendChild(newExp);
-
-    // Supprimer bloc expérience
-    newExp.querySelector(".removeExpBtn").addEventListener("click", () => {
-        experiencedivContainer.removeChild(newExp);
-    });
-});
-// ==========================
 // VALIDATION DES CHAMPS
 // ==========================
 function valideNom(nom) {
@@ -376,6 +311,11 @@ function addToRoom(worker, roomID, limit) {
         return;
     }
 
+    if (container.children.length === 0) {
+        container.parentElement.classList.remove("empty-room")
+    }
+    // console.log(container.parentElement.ATTRIBUTE_NODE);
+
     const div = document.createElement("div");
     div.className = "worker-in-room";
     div.draggable = true;
@@ -420,7 +360,19 @@ function addToRoom(worker, roomID, limit) {
     div.addEventListener("mouseleave", () => div.querySelector(".remove-worker").style.display = "none");
     div.querySelector(".remove-worker").addEventListener("click", e => {
         e.stopPropagation();
+        // console.log(div.parentElement);
+        
+        
+        if (div.parentElement.children.length === 1) {
+            div.parentElement.parentElement.classList.add("empty-room");
+        }
+        // console.log(div.parentElement.chi);
+        
+        // console.log(div.parentElement.parentElement);
+        
+
         div.remove();
+
         worker.curruntroom = "unsigned";
         save(employees);
         sidebar_load();
@@ -516,3 +468,4 @@ zones.forEach(zone => {
         addToRoom(worker, zone.id, limit);
     });
 });
+sidebar_load() ;

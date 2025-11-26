@@ -430,7 +430,7 @@ body{
 /* Tablet portrait: 768px–1023px */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   .homedisplay { flex-direction: column; }
-  .mainnav { width: 100%; position: static; box-shadow: none; }
+  .mainnav { width: 100%;  box-shadow: none; }
   .zones {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -440,15 +440,45 @@ body{
 
 /* Mobile portrait: up to 767px */
 @media (max-width: 767px) and (orientation: portrait) {
-  .homedisplay { flex-direction: column; }
-  .mainnav { width: 100%; position: static; box-shadow: none; padding: 10px; }
+
+  header {
+    z-index: -1;
+  }
+
+  .worker-card {
+    width: 100%;
+  }
+
+  #Add {
+    width: 70%;
+    z-index: 60; /* FIXED */
+  }
+
+  .homedisplay {
+    flex-direction: column;
+  }
+
+  .mainnav {
+    max-height: 400px;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px;
+    z-index: 0; 
+  }
+
   .zones {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
+    height: 80vh;
+    overflow-y: auto; 
+
+  .zone {
+    padding: 8px;
   }
-  .zone { padding: 8px; }
+
 }
+
 
 /* Mobile landscape: 768px–1023px */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
@@ -468,4 +498,9 @@ body{
     grid-template-rows: repeat(3, 1fr);
     gap: 12px;
   }
+}
+}
+.empty-room {
+    background-color: rgba(255, 0, 0, 0.2); /* light red */
+    border: 2px solid red;
 }
