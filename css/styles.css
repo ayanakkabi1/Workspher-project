@@ -357,11 +357,9 @@ body{
   min-height: 90px;
   resize: vertical;
 }
-<<<<<<< HEAD
 
 
-.addworker {
-=======
+
 #pic{
   width: 35px;
 }
@@ -374,8 +372,7 @@ body{
 #photo{
   width: 100%;
 }
-.addexp {
->>>>>>> acf390f2a575e39c0f331517f5d513f26b4c046f
+.addworker{
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -411,4 +408,64 @@ body{
   cursor: pointer;
   margin-top: 10px;
   transition: 0.2s ease;
+}
+/* Large desktop: >1280px */
+@media (min-width: 1280px) {
+  .mainnav { width: 280px; }
+  .zones {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+/* Small desktop: 1024px–1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .mainnav { width: 220px; }
+  .zones {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+/* Tablet portrait: 768px–1023px */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .homedisplay { flex-direction: column; }
+  .mainnav { width: 100%; position: static; box-shadow: none; }
+  .zones {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Mobile portrait: up to 767px */
+@media (max-width: 767px) and (orientation: portrait) {
+  .homedisplay { flex-direction: column; }
+  .mainnav { width: 100%; position: static; box-shadow: none; padding: 10px; }
+  .zones {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    gap: 10px;
+  }
+  .zone { padding: 8px; }
+}
+
+/* Mobile landscape: 768px–1023px */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .homedisplay { flex-direction: row; }
+  .mainnav { width: 160px; }
+  .zones {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+/* Tablet landscape: 1024px–1279px */
+@media (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+  .mainnav { width: 200px; }
+  .zones {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+  }
 }
