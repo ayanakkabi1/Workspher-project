@@ -37,7 +37,8 @@ function load() {
 
 let employees = load();
 sidebar_load();
-
+loadCurrentRoomState(); 
+window.addEventListener("beforeunload", saveCurrentRoomState);
 // ==========================
 // SIDEBAR – LISTE DES EMPLOYÉS
 // ==========================
@@ -302,7 +303,7 @@ function filterWorkers(roomID) {
 // ==========================
 // AJOUTER UN EMPLOYÉ DANS UNE SALLE
 // ==========================
-function addToRoom(worker, roomID, limit) {
+function addToRoom(worker, roomID, limit, shouldSave = true) {
     const container = document.getElementById(roomID);
     if (!container) return;
 
@@ -312,9 +313,8 @@ function addToRoom(worker, roomID, limit) {
     }
 
     if (container.children.length === 0) {
-        container.parentElement.classList.remove("empty-room")
+        container.parentElement.classList.remove("empty-room");
     }
-    // console.log(container.parentElement.ATTRIBUTE_NODE);
 
     const div = document.createElement("div");
     div.className = "worker-in-room";
@@ -360,35 +360,31 @@ function addToRoom(worker, roomID, limit) {
     div.addEventListener("mouseleave", () => div.querySelector(".remove-worker").style.display = "none");
     div.querySelector(".remove-worker").addEventListener("click", e => {
         e.stopPropagation();
-        // console.log(div.parentElement);
-        
         
         if (div.parentElement.children.length === 1) {
             div.parentElement.parentElement.classList.add("empty-room");
         }
-        // console.log(div.parentElement.chi);
         
-        // console.log(div.parentElement.parentElement);
-        
-
         div.remove();
-
         worker.curruntroom = "unsigned";
+        
+        // Save both employee data and room state
         save(employees);
+        saveCurrentRoomState();
         sidebar_load();
     });
 
-    // Drag & Drop depuis la salle
-    div.addEventListener("dragstart", ev => {
-        ev.dataTransfer.setData("workerId", worker.id);
-    });
 
     container.appendChild(div);
     worker.curruntroom = roomID;
+    
+    // Save both employee data and room state
     save(employees);
+    if (shouldSave) {
+        saveCurrentRoomState();
+    }
     sidebar_load();
 }
-
 // ==========================
 // OUVRIR POPUP POUR AJOUTER EMPLOYÉ
 // ==========================
@@ -442,4 +438,81 @@ document.getElementById("securityadd").addEventListener("click", () => openWorke
 document.getElementById("staffadd").addEventListener("click", () => openWorkerSelector("staff-staff", 10));
 document.getElementById("archiveadd").addEventListener("click", () => openWorkerSelector("archive-staff", 1));
 
-sidebar_load() ;
+
+// ==========================
+// SAVE AND LOAD ROOM STATE
+// ==========================
+
+function saveCurrentRoomState() {
+    const roomState = {};
+    
+    // Get all room containers
+    const roomIds = [
+        "conferencestaff",
+        "reception-staff", 
+        "server-staff",
+        "security-staff",
+        "staff-staff",
+        "archive-staff"
+    ];
+    
+    // Save which employees are in which rooms
+    roomIds.forEach(roomId => {
+        const container = document.getElementById(roomId);
+        if (container) {
+            const workerIds = Array.from(container.children).map(child => 
+                parseInt(child.dataset.id)
+            );
+            roomState[roomId] = workerIds;
+        }
+    });
+    
+    // Save to localStorage
+    localStorage.setItem("worksphere_roomState", JSON.stringify(roomState));
+    console.log("Room state saved:", roomState);
+}
+
+function loadCurrentRoomState() {
+    const savedState = localStorage.getItem("worksphere_roomState");
+    if (!savedState) return;
+    
+    const roomState = JSON.parse(savedState);
+    
+    Object.keys(roomState).forEach(roomId => {
+        const workerIds = roomState[roomId];
+        const container = document.getElementById(roomId);
+        
+        if (container) {
+            container.innerHTML = "";
+            workerIds.forEach(workerId => {
+                const worker = employees.find(w => w.id === workerId);
+                if (worker) {
+                    addToRoom(worker, roomId, getRoomLimit(roomId), false); // false = don't trigger save yet
+                }
+            });
+            
+            // Update empty room class
+            if (container.children.length === 0) {
+                container.parentElement.classList.add("empty-room");
+            } else {
+                container.parentElement.classList.remove("empty-room");
+            }
+        }
+    });
+    
+    console.log("Room state loaded:", roomState);
+}
+
+function getRoomLimit(roomId) {
+    const limits = {
+        "conferencestaff": 10,
+        "reception-staff": 3,
+        "server-staff": 4,
+        "security-staff": 4,
+        "staff-staff": 10,
+        "archive-staff": 1
+    };
+    return limits[roomId] || 10;
+}
+
+
